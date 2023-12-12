@@ -1,29 +1,26 @@
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function Car() {
+  const [car, setCar] = useState({ 
+    brand:"Ford",
+    model:"SUV",
+    Year:"1999",
+    color:"red"
+  });
+
+  return( 
+    <>
+      <h1> my car is {car.brand}</h1>
+      <p> its model is {car.model} and year {car.Year} {car.color} </p>
+    </>
+
+  )
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
 
 export default App;
